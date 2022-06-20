@@ -14,6 +14,10 @@ sleep 1
 ./switch.sh
 sleep 1
 
+
+echo "Starting wallpaper selection, this doesn't really work with GNOME dark mode right now."
+sleep 5
+
 files=( "$PWD/wallpapers/"*.png )
 
 PS3='Select a wallpaper, or 0 to exit: '
