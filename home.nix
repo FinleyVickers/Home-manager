@@ -19,6 +19,18 @@
   home.homeDirectory = "/home/finleyv";
 
   nixpkgs.config.allowUnfree = true;  
+  
+  xsession.enable = true;
+
+  dconf.settings = {
+    "org/gnome/desktop/background" = {
+        "picture-uri" = "/home/finleyv/.background-image";
+    };
+    "org/gnome/desktop/screensaver" = {
+        "picture-uri" = "/home/finleyv/.background-image";
+    };
+  };
+  home.file.".background-image".source = "/home/finleyv/.background-image";
 
   home.packages = with pkgs; [
     # Development/text editors
@@ -32,6 +44,10 @@
     rust-analyzer
     rustup
 
+    # Wine
+    wine
+    winetricks
+
     # Utils/cli misc.
     pfetch
     btop
@@ -41,7 +57,7 @@
     gh
     unzip
     exa
-
+    
     # Gaming
     steam
     steam-run
@@ -62,9 +78,17 @@
     # Misc
     blender
     davinci-resolve
+    qbittorrent
+
+    # Music
+    bitwig-studio
+    jack2
+    
+
   ];
   
   nixpkgs.overlays = [(self: super: { discord = super.discord.overrideAttrs (_: { src = builtins.fetchTarball https://discord.com/api/download/stable?platform=linux&format=tar.gz; });})];
+
 
 
   # This value determines the Home Manager release that your
@@ -80,6 +104,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  systemd.user.services.emacs.Unit = {
+    After = [ "graphical-session-pre.target" ];
+    PartOf = [ "graphical-session.target" ];
+  }; 
+ 
   # Start emacs server
   services.emacs.enable = true;
 
