@@ -37,7 +37,7 @@
     vscode
     neovim
     emacs
-
+    gitkraken
     python3
     nodejs
     cmake
@@ -83,8 +83,6 @@
     # Music
     bitwig-studio
     jack2
-    
-
   ];
   
   nixpkgs.overlays = [(self: super: { discord = super.discord.overrideAttrs (_: { src = builtins.fetchTarball https://discord.com/api/download/stable?platform=linux&format=tar.gz; });})];
