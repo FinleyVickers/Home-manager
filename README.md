@@ -66,3 +66,6 @@ Please consult home-manager documentation for exact required steps.
 Also since we do not install home-manager, you cannot run the
 home-manager script from any directory and expect it to work. It must
 be run from within the nix-shell. (This is actually a feature!)
+
+# Wallpapers
+All wallpapers credits go to their respective artists. Credits go to the r/Unixporn discord and Alena Aenami (https://www.artstation.com/aenamiart).
