@@ -57,6 +57,7 @@
     gh
     unzip
     exa
+    feh
     
     # Gaming
     steam

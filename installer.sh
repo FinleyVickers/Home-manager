@@ -33,3 +33,5 @@ select file in "${files[@]}"; do
 done
 
 cp $file $HOME/.background-image
+
+feh --bg-fill $HOME/.background-image
