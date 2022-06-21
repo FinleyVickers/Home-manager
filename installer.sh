@@ -2,6 +2,7 @@
 
 echo "Make sure to update home.nix file before continuing"
 sleep 5
+clear
 
 echo "Updating dependencies..."
 sleep 1
