@@ -15,10 +15,10 @@ sleep 1
 sleep 1
 
 
-echo "Starting wallpaper selection, this doesn't really work with GNOME dark mode right now."
+echo "Starting wallpaper selection"
 sleep 5
-
-files=( "$PWD/wallpapers/"*.png )
+clear
+files=( "$PWD/wallpapers/"* )
 
 PS3='Select a wallpaper, or 0 to exit: '
 select file in "${files[@]}"; do
@@ -34,4 +34,6 @@ done
 
 cp $file $HOME/.background-image
 
-feh --bg-fill $HOME/.background-image
+echo "Changing wallpaper... (this will fail on a non-gnome de)"
+gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/.background-image
+gsettings set org.gnome.desktop.background picture-uri-dark file:///home/$USER/.background-image

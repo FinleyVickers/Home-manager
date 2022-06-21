@@ -5,10 +5,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ce8266dedcba66155624eca88280ee425f4d3611",
-        "sha256": "1hn9r4i6ygxz53qh5q59r3dkcqcaphz14dlwx321ghjshayfxkha",
+        "rev": "ce563f591195cf363bca382fe02ea5ca87754773",
+        "sha256": "0b14d382bqkl6w2rqc0lypvm822rxjj11gsdp4l9fhhwg8nky3ag",
         "type": "tarball",
-        "url": "https://github.com/nix-community/home-manager/archive/ce8266dedcba66155624eca88280ee425f4d3611.tar.gz",
+        "url": "https://github.com/nix-community/home-manager/archive/ce563f591195cf363bca382fe02ea5ca87754773.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
