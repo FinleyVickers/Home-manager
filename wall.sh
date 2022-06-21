@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-files=( "$PWD/wallpapers/"*.png )
+echo "Starting wallpaper selection"
+sleep 5
+clear
+files=( "$PWD/wallpapers/"* )
 
-PS3='Select file to upload, or 0 to exit: '
+PS3='Select a wallpaper, or 0 to exit: '
 select file in "${files[@]}"; do
     if [[ $REPLY == "0" ]]; then
         echo 'Bye!' >&2
@@ -13,4 +16,9 @@ select file in "${files[@]}"; do
         break
     fi
 done
- cp $file $HOME/.background-image
+
+cp $file $HOME/.background-image
+
+echo "Changing wallpaper... (this will fail on a non-gnome de)"
+gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/.background-image
+gsettings set org.gnome.desktop.background picture-uri-dark file:///home/$USER/.background-image
