@@ -17,7 +17,7 @@ sleep 1
 
 
 echo "Starting wallpaper selection"
-sleep 5
+sleep 2
 clear
 files=( "$PWD/wallpapers/"* )
 
