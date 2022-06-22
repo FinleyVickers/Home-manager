@@ -103,10 +103,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  systemd.user.services.emacs.Unit = {
-    After = [ "graphical-session-pre.target" ];
-    PartOf = [ "graphical-session.target" ];
-  }; 
+  #systemd.user.services.emacs.Unit = {
+  #  After = [ "graphical-session-pre.target" ];
+  #  PartOf = [ "graphical-session.target" ];
+  #};
  
   # Start emacs server
   services.emacs.enable = true;
